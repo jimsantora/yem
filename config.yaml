@@ -1,0 +1,40 @@
+training:
+  learning_rate: 1e-4
+  num_epochs: 100
+  warmup_steps: 500
+  gradient_accumulation: 1
+  mixed_precision: fp16
+  lora:
+    rank: 4
+    alpha: 4
+    target_modules:
+      - attn.to_q
+      - attn.to_k
+      - attn.to_v
+      - attn.to_out.0
+
+memory:
+  cache_latents: true
+  gradient_checkpointing: true
+  attention_slicing: auto
+  vae_slicing: true
+
+system:
+  thermal_throttling:
+    enabled: true
+    max_temp: 90  # Celsius
+    cooldown_time: 60  # seconds
+  memory_monitoring:
+    enabled: true
+    warning_threshold: 0.85  # percentage
+
+validation:
+  enabled: true
+  frequency: 20  # epochs
+  num_images: 4
+  guidance_scale: 7.5
+
+export:
+  format: safetensors
+  half_precision: true
+  include_metadata: true

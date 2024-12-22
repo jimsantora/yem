@@ -134,7 +134,7 @@ from peft import LoraConfig
 ## Usage Example
 ```bash
 python -m yem train \
-    --model "stabilityai/stable-diffusion-3" \
+    --model "stabilityai/stable-diffusion-3-medium-diffusers" \
     --data "path/to/images" \
     --prompt "a photo of sks dog" \
     --resolution 1024 \

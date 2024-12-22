@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: yem
+Version: 0.1.0
+Summary: Stable Diffusion 3 fine-tuning tool optimized for Apple Silicon
+Home-page: https://github.com/jimsantora/yem
+Author: Jim Santora
+Author-email: jim.santora+gh@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: MacOS :: MacOS X
+Requires-Python: >=3.9
+Provides-Extra: dev
+
+
+    Yem is a specialized tool for fine-tuning Stable Diffusion 3 models
+    on Apple Silicon hardware using LoRA. It features automatic memory
+    management, thermal monitoring, and M-series chip optimizations.
+    
+
