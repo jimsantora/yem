@@ -1,29 +1,17 @@
-import torch.backends.mps
 from typing import Dict, Any
 
-from .prepare import setup
-from .train import run as run_training
-from .optimize import run as run_optimization
-from .export import save as save_model
+from .prepare import setup_pipeline
+from .train import run_training
+from .export import save_pipeline
 
-def verify_mps() -> None:
-    """Verify MPS availability."""
-    if not torch.backends.mps.is_available():
-        raise RuntimeError(
-            "This tool requires an Apple Silicon Mac with Metal Performance Shaders (MPS) support."
-        )
-
-def run_pipeline(args: Dict[str, Any], config: Dict[str, Any] = None) -> None:
+def run_pipeline(args: Dict[str, Any], config: Dict[str, Any]) -> None:
     """Run the complete fine-tuning pipeline."""
-    verify_mps()
+    # Initialize components
+    components = setup_pipeline(args, config)
     
-    if config is None:
-        config = {}
+    # Run training
+    if args["command"] == "train":
+        components = run_training(args, components, config)
     
-    # Run pipeline stages
-    config['components'] = setup(args, config)
-    config['components'] = run_training(args, config)
-    config['components'] = run_optimization(args, config)
-    save_model(args, config)
-
-__all__ = ['run_pipeline']
+    # Save pipeline
+    save_pipeline(args, components, config)
