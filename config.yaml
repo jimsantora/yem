@@ -1,6 +1,0 @@
-training:
-  mixed_precision: "no"
-  learning_rate: 1e-4
-memory:
-  cache_latents: true
-  gradient_checkpointing: true

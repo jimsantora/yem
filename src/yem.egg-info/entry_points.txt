@@ -1,3 +1,0 @@
-[console_scripts]
-yem = yem.main:main
-

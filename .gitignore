@@ -47,3 +47,8 @@ wandb/
 .AppleDouble
 .LSOverride
 ._*
+
+wandb
+trained*
+JimSantora
+

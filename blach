@@ -1,9 +1,0 @@
-# Yem: SD3 Fine-tuning Tool for Apple Silicon
-
-## Project Overview
-Create a specialized Python application for fine-tuning Stable Diffusion 3 models on Apple Silicon using LoRA. The tool will be called "yem" and will leverage existing HuggingFace infrastructure while optimizing specifically for M-series chips.
-
-## Core Architecture
-
-### Base Components
-The project will build upon the existing `train_dreambooth_lora_sd3.py` implementation, with Apple Silicon-specific optimizations. This project has been split up into the other python files in this project knowledge. We are using the attached Project Plan to customize the code. 
